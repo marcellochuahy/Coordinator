@@ -10,12 +10,12 @@ import UIKit
 
 class VC2: UIViewController {
 
-    private var button1: UIButton!
-    private var button2: UIButton!
+    lazy var button1: UIButton = { return UIButton(frame: .zero)}()
+    lazy var button2: UIButton = { return UIButton(frame: .zero)}()
     
     override func loadView() {
         setupView()
-        setupButtons()
+        setupViewConfiguration()
     }
     
     override func viewDidLoad() {
@@ -23,18 +23,31 @@ class VC2: UIViewController {
         title = "VC2"
     }
     
+    // MARK: - Actions
+    
+    @objc private func button1WasPressed(_ sender: AnyObject) {
+        self.navigationController?.pushViewController(VC3(), animated: true)
+    }
+    
+    @objc private func button2WasPressed(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+}
+
+extension VC2: ViewConfiguration {
+    
     private func setupView() {
         view = UIView(frame: .zero)
         view.backgroundColor = .white
     }
     
-    private func setupButtons() {
-        
-        button1 = UIButton()
-        button2 = UIButton()
-        
+    func buildViewHierarchy() {
         view.addSubview(button1)
         view.addSubview(button2)
+    }
+    
+    func setupConstraints() {
         
         button1.translatesAutoresizingMaskIntoConstraints = false
         button2.translatesAutoresizingMaskIntoConstraints = false
@@ -53,6 +66,10 @@ class VC2: UIViewController {
             
         ])
         
+    }
+    
+    func configureViews() {
+        
         button1.setTitle("▶️ pushViewController VC3", for: .normal)
         button1.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         button1.titleLabel?.textColor = .white
@@ -67,16 +84,6 @@ class VC2: UIViewController {
         button2.layer.cornerRadius = 8
         button2.addTarget(self, action: #selector(button2WasPressed(_:)), for: .touchUpInside)
         
-    }
-    
-    // MARK: - Actions
-    
-    @objc private func button1WasPressed(_ sender: AnyObject) {
-        self.navigationController?.pushViewController(VC3(), animated: true)
-    }
-    
-    @objc private func button2WasPressed(_ sender: AnyObject) {
-        self.navigationController?.popViewController(animated: true)
     }
     
 }

@@ -10,31 +10,44 @@ import UIKit
 
 class VC3: UIViewController {
     
-    private var button1: UIButton!
-    private var button2: UIButton!
+    lazy var button1: UIButton = { return UIButton(frame: .zero)}()
+    lazy var button2: UIButton = { return UIButton(frame: .zero)}()
     
     override func loadView() {
         setupView()
-        setupButtons()
+        setupViewConfiguration()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "VC3"
     }
+
+    // MARK: - Actions
+    
+    @objc private func button1WasPressed(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func button2WasPressed(_ sender: AnyObject) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+}
+
+extension VC3: ViewConfiguration {
     
     private func setupView() {
         view = UIView(frame: .zero)
         view.backgroundColor = .white
     }
     
-    private func setupButtons() {
-        
-        button1 = UIButton()
-        button2 = UIButton()
-        
+    func buildViewHierarchy() {
         view.addSubview(button1)
         view.addSubview(button2)
+    }
+    
+    func setupConstraints() {
         
         button1.translatesAutoresizingMaskIntoConstraints = false
         button2.translatesAutoresizingMaskIntoConstraints = false
@@ -52,6 +65,9 @@ class VC3: UIViewController {
             button2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
             
         ])
+    }
+    
+    func configureViews() {
         
         button1.setTitle("◀️ popViewController", for: .normal)
         button1.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
@@ -67,16 +83,6 @@ class VC3: UIViewController {
         button2.layer.cornerRadius = 8
         button2.addTarget(self, action: #selector(button2WasPressed(_:)), for: .touchUpInside)
         
-    }
-
-    // MARK: - Actions
-    
-    @objc private func button1WasPressed(_ sender: AnyObject) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @objc private func button2WasPressed(_ sender: AnyObject) {
-        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }

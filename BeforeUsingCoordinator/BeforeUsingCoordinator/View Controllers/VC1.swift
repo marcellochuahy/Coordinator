@@ -10,11 +10,11 @@ import UIKit
 
 class VC1: UIViewController {
 
-    private var button1: UIButton!
+    lazy var button1: UIButton = { return UIButton(frame: .zero)}()
     
     override func loadView() {
         setupView()
-        setupButton()
+        setupViewConfiguration()
     }
     
     override func viewDidLoad() {
@@ -22,24 +22,35 @@ class VC1: UIViewController {
         title = "VC1"
     }
 
+    // MARK: - Actions
+    @objc private func button1WasPressed(_ sender: AnyObject) {
+        self.navigationController?.pushViewController(VC2(), animated: true)
+    }
+    
+}
+
+extension VC1: ViewConfiguration {
+    
     private func setupView() {
         view = UIView(frame: .zero)
         view.backgroundColor = .white
     }
 
-    private func setupButton() {
-        
-        button1 = UIButton()
+    func buildViewHierarchy() {
         view.addSubview(button1)
+    }
+    
+    func setupConstraints() {
         button1.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             button1.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             button1.heightAnchor.constraint(equalToConstant: 64),
             button1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             button1.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
         ])
-        
+    }
+    
+    func configureViews() {
         button1.setTitle("▶️ pushViewController VC2", for: .normal)
         button1.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         button1.titleLabel?.textColor = .white
@@ -47,11 +58,5 @@ class VC1: UIViewController {
         button1.layer.cornerRadius = 8
         button1.addTarget(self, action: #selector(button1WasPressed(_:)), for: .touchUpInside)
     }
-
-    // MARK: - Actions
-    
-    @objc private func button1WasPressed(_ sender: AnyObject) {
-        self.navigationController?.pushViewController(VC2(), animated: true)
-    }
-    
+ 
 }

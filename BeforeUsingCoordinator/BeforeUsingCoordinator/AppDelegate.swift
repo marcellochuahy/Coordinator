@@ -14,6 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        setup()
+        return true
+    }
+    
+}
+
+extension AppDelegate {
+    
+    func setup() {
         
         let viewController = VC1()
         let navigationController = UINavigationController(rootViewController: viewController)
@@ -22,8 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
-        
-        return true
         
     }
     
