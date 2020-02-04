@@ -10,8 +10,8 @@ import UIKit
 
 class VC3: UIViewController {
     
-    lazy var button1: UIButton = { return UIButton(frame: .zero)}()
-    lazy var button2: UIButton = { return UIButton(frame: .zero)}()
+    private lazy var button1: UIButton = { return UIButton(frame: .zero)}()
+    private lazy var button2: UIButton = { return UIButton(frame: .zero)}()
     
     override func loadView() {
         setupView()
