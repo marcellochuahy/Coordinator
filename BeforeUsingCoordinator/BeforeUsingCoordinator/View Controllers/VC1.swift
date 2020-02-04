@@ -14,7 +14,7 @@ class VC1: UIViewController {
     
     override func loadView() {
         setupView()
-        setupViewConfiguration()
+        callsMethodsInPreSetOrder()
     }
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class VC1: UIViewController {
     
 }
 
-extension VC1: ViewConfiguration {
+extension VC1: ViewCodeProtocol {
     
     private func setupView() {
         view = UIView(frame: .zero)
@@ -50,7 +50,7 @@ extension VC1: ViewConfiguration {
         ])
     }
     
-    func configureViews() {
+    func setupComplementaryConfiguration() {
         button1.setTitle("▶️ pushViewController VC2", for: .normal)
         button1.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         button1.titleLabel?.textColor = .white

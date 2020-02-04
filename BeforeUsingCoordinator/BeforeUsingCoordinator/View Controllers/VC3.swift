@@ -15,7 +15,7 @@ class VC3: UIViewController {
     
     override func loadView() {
         setupView()
-        setupViewConfiguration()
+        callsMethodsInPreSetOrder()
     }
     
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class VC3: UIViewController {
     
 }
 
-extension VC3: ViewConfiguration {
+extension VC3: ViewCodeProtocol {
     
     private func setupView() {
         view = UIView(frame: .zero)
@@ -67,7 +67,7 @@ extension VC3: ViewConfiguration {
         ])
     }
     
-    func configureViews() {
+    func setupComplementaryConfiguration() {
         
         button1.setTitle("◀️ popViewController", for: .normal)
         button1.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
