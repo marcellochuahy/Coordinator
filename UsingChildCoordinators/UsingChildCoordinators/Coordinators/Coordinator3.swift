@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Coordinator3.swift
 //  UsingChildCoordinators
 //
 //  Created by Marcello Chuahy on 04/02/20.
@@ -20,9 +20,9 @@ class Coordinator3: Coordinator {
     }
     
     func start() {
-        let vc = ViewController3A.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let viewController = ViewController3A.instantiate()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
     
 }

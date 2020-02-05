@@ -1,5 +1,5 @@
 //
-//  Coordinator002.swift
+//  Coordinator2.swift
 //  UsingChildCoordinators
 //
 //  Created by Marcello Chuahy on 04/02/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Coordinator002: Coordinator {
+class Coordinator2: Coordinator {
     
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
@@ -20,9 +20,9 @@ class Coordinator002: Coordinator {
     }
     
     func start() {
-        let vc = ViewController002A.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let viewController = ViewController2A.instantiate()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
     
 }
