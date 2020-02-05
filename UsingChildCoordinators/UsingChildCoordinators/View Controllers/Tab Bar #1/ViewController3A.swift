@@ -1,5 +1,5 @@
 //
-//  VC3.swift
+//  File.swift
 //  UsingChildCoordinators
 //
 //  Created by Marcello Chuahy on 04/02/20.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController001A: UIViewController {
+class ViewController3A: UIViewController {
     
-    weak var coordinator: Coordinator001?
+    weak var coordinator: Coordinator3?
     private lazy var label: UILabel = { return UILabel(frame: .zero)}()
     
     override func loadView() {
@@ -21,20 +21,19 @@ class ViewController001A: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-  
+    
 }
 
 // MARK: - Constructors
-
-extension ViewController001A {
-    public class func instantiate() -> ViewController002A {
-        let viewController = ViewController002A()
-        viewController.title = "VC001A"
+extension ViewController3A {
+    public class func instantiate() -> ViewController3A {
+        let viewController = ViewController3A()
+        viewController.title = "VC 3A"
         return viewController
     }
 }
 
-extension ViewController001A: ViewCodeProtocol {
+extension ViewController3A: ViewCodeProtocol {
     
     private func setupView() {
         view = UIView(frame: .zero)
@@ -57,9 +56,14 @@ extension ViewController001A: ViewCodeProtocol {
     }
     
     func setupComplementaryConfiguration() {
-        label.text = "Está é a página CREATE ACCOUNT"
+        label.text = "Esta é a página VC 3A"
     }
     
 }
+
+
+
+
+
 
 

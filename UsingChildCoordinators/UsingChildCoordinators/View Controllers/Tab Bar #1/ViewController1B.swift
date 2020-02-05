@@ -1,5 +1,5 @@
 //
-//  VC2.swift
+//  ViewController1B.swift
 //  UsingChildCoordinators
 //
 //  Created by Marcello Chuahy on 04/02/20.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ViewController002A: UIViewController {
-
-    weak var coordinator: Coordinator002?
+class ViewController1B: UIViewController {
+    
+    weak var coordinator: Coordinator1?
     private lazy var label: UILabel = { return UILabel(frame: .zero)}()
+    private var labelText: String?
     
     override func loadView() {
         setupView()
@@ -25,15 +26,17 @@ class ViewController002A: UIViewController {
 }
 
 // MARK: - Constructors
-extension ViewController002A {
-    public class func instantiate() -> ViewController002A {
-        let viewController = ViewController002A()
-        viewController.title = "VC002A"
+
+extension ViewController1B {
+    public class func instantiate(id: String) -> ViewController1B {
+        let viewController = ViewController1B()
+        viewController.title = id
+        viewController.labelText = id
         return viewController
     }
 }
 
-extension ViewController002A: ViewCodeProtocol {
+extension ViewController1B: ViewCodeProtocol {
     
     private func setupView() {
         view = UIView(frame: .zero)
@@ -48,21 +51,21 @@ extension ViewController002A: ViewCodeProtocol {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         
+        
         NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
     }
     
     func setupComplementaryConfiguration() {
-        label.text = "Está é a página VC002A"
+        
+        label.text = labelText ?? "Ups. Algo deu errado."
+        
     }
     
 }
-
-
-
 
 
 
