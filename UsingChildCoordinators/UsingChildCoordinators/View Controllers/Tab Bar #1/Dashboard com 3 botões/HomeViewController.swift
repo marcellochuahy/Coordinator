@@ -8,13 +8,15 @@
 
 import UIKit
 
-//public protocol VC1NavigationDelegate: class {
-//    func navigateFromVC1ToNextScene()
-//}
+public protocol HomeViewControllerDelegate: class {
+    func startNavigationFlow1()
+    func startNavigationFlow2()
+    func startNavigationFlow3()
+}
 
 class HomeViewController: UIViewController {
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: HomeViewControllerDelegate?
     
     private lazy var button1: UIButton = { return UIButton(frame: .zero)}()
     private lazy var button2: UIButton = { return UIButton(frame: .zero)}()
@@ -31,25 +33,18 @@ class HomeViewController: UIViewController {
     
     // MARK: - Actions
     
-    @objc func button1WasTapped(_ sender: Any) {
-        coordinator?.startNavigationFlow1()
-    }
-    
-    @objc func button2WasTapped(_ sender: Any) {
-        coordinator?.startNavigationFlow2()
-    }
-    
-    @objc func button3WasTapped(_ sender: Any) {
-        coordinator?.startNavigationFlow3()
-    }
+    @objc func button1WasTapped(_ sender: Any) { coordinator?.startNavigationFlow1() }
+    @objc func button2WasTapped(_ sender: Any) { coordinator?.startNavigationFlow2() }
+    @objc func button3WasTapped(_ sender: Any) { coordinator?.startNavigationFlow3() }
  
 }
 
 // MARK: - Constructors
 extension HomeViewController {
 
-    public class func instantiate() -> HomeViewController {
+    public class func instantiate(delegate: HomeViewControllerDelegate?) -> HomeViewController {
         let viewController = HomeViewController()
+        viewController.coordinator = delegate
         viewController.title = "Dashboard"
         return viewController
     }
@@ -105,7 +100,7 @@ extension HomeViewController: ViewCodeProtocol {
         button1.layer.cornerRadius = 8
         button1.addTarget(self, action: #selector(button1WasTapped(_:)), for: .touchUpInside)
         
-        button2.setTitle("Pagamentos a VENCIDOS >", for: .normal)
+        button2.setTitle("Pagamentos VENCIDOS >", for: .normal)
         button2.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
         button2.titleLabel?.textColor = .white
         button2.backgroundColor = .green

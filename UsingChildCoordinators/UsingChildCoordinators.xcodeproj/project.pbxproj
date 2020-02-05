@@ -14,13 +14,12 @@
 		5F1B9A4023EA05770033B2F3 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A3F23EA05770033B2F3 /* MainCoordinator.swift */; };
 		5F1B9A4223EA058D0033B2F3 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A4123EA058D0033B2F3 /* ViewCodeProtocol.swift */; };
 		5F1B9A4423EA059D0033B2F3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A4323EA059D0033B2F3 /* HomeViewController.swift */; };
-		5F1B9A4623EA05AC0033B2F3 /* ViewController2A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A4523EA05AC0033B2F3 /* ViewController2A.swift */; };
+		5F1B9A4623EA05AC0033B2F3 /* ReusableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A4523EA05AC0033B2F3 /* ReusableViewController.swift */; };
 		5F1B9A4823EA05B50033B2F3 /* ViewController1A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A4723EA05B50033B2F3 /* ViewController1A.swift */; };
 		5F1B9A4A23EA1BCB0033B2F3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A4923EA1BCB0033B2F3 /* MainTabBarController.swift */; };
 		5F1B9A4C23EA28A40033B2F3 /* Coordinator1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A4B23EA28A40033B2F3 /* Coordinator1.swift */; };
 		5F1B9A4E23EA2F820033B2F3 /* Coordinator2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A4D23EA2F820033B2F3 /* Coordinator2.swift */; };
 		5F1B9A5023EA3A890033B2F3 /* Coordinator3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A4F23EA3A890033B2F3 /* Coordinator3.swift */; };
-		5F1B9A5223EA3CD60033B2F3 /* ViewController3A.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A5123EA3CD60033B2F3 /* ViewController3A.swift */; };
 		5F1B9A5423EA50B40033B2F3 /* ViewController1B.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A5323EA50B30033B2F3 /* ViewController1B.swift */; };
 		5F1B9A5623EAE1BD0033B2F3 /* HomeViewControllerForTab2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A5523EAE1BD0033B2F3 /* HomeViewControllerForTab2.swift */; };
 		5F1B9A5823EAE9E30033B2F3 /* MainCoordinator2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9A5723EAE9E30033B2F3 /* MainCoordinator2.swift */; };
@@ -36,13 +35,12 @@
 		5F1B9A3F23EA05770033B2F3 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		5F1B9A4123EA058D0033B2F3 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 		5F1B9A4323EA059D0033B2F3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		5F1B9A4523EA05AC0033B2F3 /* ViewController2A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2A.swift; sourceTree = "<group>"; };
+		5F1B9A4523EA05AC0033B2F3 /* ReusableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewController.swift; sourceTree = "<group>"; };
 		5F1B9A4723EA05B50033B2F3 /* ViewController1A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1A.swift; sourceTree = "<group>"; };
 		5F1B9A4923EA1BCB0033B2F3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		5F1B9A4B23EA28A40033B2F3 /* Coordinator1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator1.swift; sourceTree = "<group>"; };
 		5F1B9A4D23EA2F820033B2F3 /* Coordinator2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator2.swift; sourceTree = "<group>"; };
 		5F1B9A4F23EA3A890033B2F3 /* Coordinator3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator3.swift; sourceTree = "<group>"; };
-		5F1B9A5123EA3CD60033B2F3 /* ViewController3A.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3A.swift; sourceTree = "<group>"; };
 		5F1B9A5323EA50B30033B2F3 /* ViewController1B.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1B.swift; sourceTree = "<group>"; };
 		5F1B9A5523EAE1BD0033B2F3 /* HomeViewControllerForTab2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerForTab2.swift; sourceTree = "<group>"; };
 		5F1B9A5723EAE9E30033B2F3 /* MainCoordinator2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator2.swift; sourceTree = "<group>"; };
@@ -92,11 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				5F1B9A3D23EA05670033B2F3 /* Coordinator.swift */,
-				5F1B9A3F23EA05770033B2F3 /* MainCoordinator.swift */,
-				5F1B9A5723EAE9E30033B2F3 /* MainCoordinator2.swift */,
-				5F1B9A4B23EA28A40033B2F3 /* Coordinator1.swift */,
-				5F1B9A4D23EA2F820033B2F3 /* Coordinator2.swift */,
-				5F1B9A4F23EA3A890033B2F3 /* Coordinator3.swift */,
+				5F1B9A5B23EB3D4D0033B2F3 /* Coordinators da Tab 1 */,
+				5F1B9A5C23EB3D6F0033B2F3 /* Coordinators da Tab 2 */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -115,11 +110,10 @@
 		5F1B9A5923EAEAAE0033B2F3 /* Tab Bar #1 */ = {
 			isa = PBXGroup;
 			children = (
-				5F1B9A4323EA059D0033B2F3 /* HomeViewController.swift */,
-				5F1B9A4723EA05B50033B2F3 /* ViewController1A.swift */,
-				5F1B9A5323EA50B30033B2F3 /* ViewController1B.swift */,
-				5F1B9A4523EA05AC0033B2F3 /* ViewController2A.swift */,
-				5F1B9A5123EA3CD60033B2F3 /* ViewController3A.swift */,
+				5F1B9A5D23EB47800033B2F3 /* Dashboard com 3 botões */,
+				5F1B9A5E23EB49900033B2F3 /* Scene com 5 boletos (001 ~ 005) */,
+				5F1B9A5F23EB49C80033B2F3 /* Scene com detalhe do boleto selecionado */,
+				5F1B9A4523EA05AC0033B2F3 /* ReusableViewController.swift */,
 			);
 			path = "Tab Bar #1";
 			sourceTree = "<group>";
@@ -130,6 +124,50 @@
 				5F1B9A5523EAE1BD0033B2F3 /* HomeViewControllerForTab2.swift */,
 			);
 			path = "Tab Bar #2";
+			sourceTree = "<group>";
+		};
+		5F1B9A5B23EB3D4D0033B2F3 /* Coordinators da Tab 1 */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9A3F23EA05770033B2F3 /* MainCoordinator.swift */,
+				5F1B9A4B23EA28A40033B2F3 /* Coordinator1.swift */,
+				5F1B9A4D23EA2F820033B2F3 /* Coordinator2.swift */,
+				5F1B9A4F23EA3A890033B2F3 /* Coordinator3.swift */,
+			);
+			path = "Coordinators da Tab 1";
+			sourceTree = "<group>";
+		};
+		5F1B9A5C23EB3D6F0033B2F3 /* Coordinators da Tab 2 */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9A5723EAE9E30033B2F3 /* MainCoordinator2.swift */,
+			);
+			path = "Coordinators da Tab 2";
+			sourceTree = "<group>";
+		};
+		5F1B9A5D23EB47800033B2F3 /* Dashboard com 3 botões */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9A4323EA059D0033B2F3 /* HomeViewController.swift */,
+			);
+			name = "Dashboard com 3 botões";
+			path = "Dashboard com 3 botões";
+			sourceTree = "<group>";
+		};
+		5F1B9A5E23EB49900033B2F3 /* Scene com 5 boletos (001 ~ 005) */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9A4723EA05B50033B2F3 /* ViewController1A.swift */,
+			);
+			path = "Scene com 5 boletos (001 ~ 005)";
+			sourceTree = "<group>";
+		};
+		5F1B9A5F23EB49C80033B2F3 /* Scene com detalhe do boleto selecionado */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9A5323EA50B30033B2F3 /* ViewController1B.swift */,
+			);
+			path = "Scene com detalhe do boleto selecionado";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F1B9A4C23EA28A40033B2F3 /* Coordinator1.swift in Sources */,
-				5F1B9A5223EA3CD60033B2F3 /* ViewController3A.swift in Sources */,
 				5F1B9A3E23EA05670033B2F3 /* Coordinator.swift in Sources */,
 				5F1B9A4223EA058D0033B2F3 /* ViewCodeProtocol.swift in Sources */,
 				5F1B9A4E23EA2F820033B2F3 /* Coordinator2.swift in Sources */,
@@ -212,7 +249,7 @@
 				5F1B9A5623EAE1BD0033B2F3 /* HomeViewControllerForTab2.swift in Sources */,
 				5F1B9A5423EA50B40033B2F3 /* ViewController1B.swift in Sources */,
 				5F1B9A4423EA059D0033B2F3 /* HomeViewController.swift in Sources */,
-				5F1B9A4623EA05AC0033B2F3 /* ViewController2A.swift in Sources */,
+				5F1B9A4623EA05AC0033B2F3 /* ReusableViewController.swift in Sources */,
 				5F1B9A4823EA05B50033B2F3 /* ViewController1A.swift in Sources */,
 				5F1B9A3A23EA05160033B2F3 /* AppDelegate.swift in Sources */,
 				5F1B9A5023EA3A890033B2F3 /* Coordinator3.swift in Sources */,

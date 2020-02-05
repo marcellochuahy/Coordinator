@@ -1,5 +1,5 @@
 //
-//  Coordinator2.swift
+//  Coordinator1.swift
 //  UsingChildCoordinators
 //
 //  Created by Marcello Chuahy on 04/02/20.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class Coordinator2: Coordinator {
-    
+class Coordinator1: Coordinator {
+
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -20,9 +20,29 @@ class Coordinator2: Coordinator {
     }
     
     func start() {
-        let viewController = ViewController2A.instantiate()
+        let viewController = ViewController1A.instantiate(delegate: self)
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
+
+}
+
+
+extension Coordinator1: ViewController1ADelegate {
+
+    func send(id: String) {
+        navigateToDetailVC(withID: id)
+    }
+    
+    private func navigateToDetailVC(withID id: String) {
+        let viewController = ViewController1B.instantiate(id: id)
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+
+    
+    
+    
     
 }

@@ -46,6 +46,3 @@ extension AppDelegate {
     }
     
 }
-
-
-

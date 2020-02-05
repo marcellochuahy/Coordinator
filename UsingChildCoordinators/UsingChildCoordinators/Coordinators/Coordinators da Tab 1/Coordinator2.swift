@@ -1,5 +1,5 @@
 //
-//  Coordinator1.swift
+//  Coordinator2.swift
 //  UsingChildCoordinators
 //
 //  Created by Marcello Chuahy on 04/02/20.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class Coordinator1: Coordinator {
-
+class Coordinator2: Coordinator {
+    
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -20,20 +20,8 @@ class Coordinator1: Coordinator {
     }
     
     func start() {
-        let viewController = ViewController1A.instantiate()
-        viewController.coordinator = self
+        let viewController = ReusableViewController.instantiate(title: "Pagamentos Vencidos", labelText: "Por simplicidade, não foi criado um fluxo de navegação a partir dessa scene. Para verificar um exemplo com fluxo de navegação volte e escolha a opção \"Pagamentos A Vencer\"")
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func send(id: String) {
-        navigateToDetailVC(withID: id)
-    }
-    
-    public func navigateToDetailVC(withID id: String) {
-        
-        let viewController = ViewController1B.instantiate(id: id)
-        viewController.coordinator = self
-        navigationController.pushViewController(viewController, animated: true)
-    }
-
 }

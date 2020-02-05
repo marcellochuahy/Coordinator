@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ViewController2A.swift
 //  UsingChildCoordinators
 //
 //  Created by Marcello Chuahy on 04/02/20.
@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ViewController3A: UIViewController {
-    
-    weak var coordinator: Coordinator3?
+class ReusableViewController: UIViewController {
+
     private lazy var label: UILabel = { return UILabel(frame: .zero)}()
+    private var labelText: String?
     
     override func loadView() {
         setupView()
@@ -21,19 +21,20 @@ class ViewController3A: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
 }
 
 // MARK: - Constructors
-extension ViewController3A {
-    public class func instantiate() -> ViewController3A {
-        let viewController = ViewController3A()
-        viewController.title = "VC 3A"
+extension ReusableViewController {
+    public class func instantiate(title: String, labelText: String) -> ReusableViewController {
+        let viewController = ReusableViewController()
+        viewController.title = title
+        viewController.labelText = labelText
         return viewController
     }
 }
 
-extension ViewController3A: ViewCodeProtocol {
+extension ReusableViewController: ViewCodeProtocol {
     
     private func setupView() {
         view = UIView(frame: .zero)
@@ -50,17 +51,20 @@ extension ViewController3A: ViewCodeProtocol {
         
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
         
     }
     
     func setupComplementaryConfiguration() {
-        label.text = "Esta é a página VC 3A"
+        label.text = labelText
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 5
     }
     
 }
-
 
 
 

@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol ViewController1ADelegate: class {
+    func send(id: String)
+}
+
 class ViewController1A: UIViewController {
     
-    weak var coordinator: Coordinator1?
+    weak var coordinator: ViewController1ADelegate?
+    
     var safeArea: UILayoutGuide!
     private lazy var label: UILabel = { return UILabel(frame: .zero)}()
     private lazy var button1: UIButton = { return UIButton(frame: .zero)}()
@@ -41,8 +46,9 @@ class ViewController1A: UIViewController {
 // MARK: - Constructors
 
 extension ViewController1A {
-    public class func instantiate() -> ViewController1A {
+    public class func instantiate(delegate: ViewController1ADelegate?) -> ViewController1A {
         let viewController = ViewController1A()
+        viewController.coordinator = delegate
         viewController.title = "Lista de Pagamentos"
         return viewController
     }

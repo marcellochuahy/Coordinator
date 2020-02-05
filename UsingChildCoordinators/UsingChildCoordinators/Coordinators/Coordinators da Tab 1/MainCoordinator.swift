@@ -18,12 +18,24 @@ class MainCoordinator: NSObject, Coordinator {
     }
     
     func start() {
-        let viewController = HomeViewController.instantiate()
+        let viewController = HomeViewController.instantiate(delegate: self)
         viewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-        viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: false)
         navigationController.delegate = self
     }
+    
+    func childDidFinish(_ child: Coordinator?) {
+        for (index, coordinator) in childCoordinators.enumerated() {
+            if coordinator === child {
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
+    }
+ 
+}
+
+extension MainCoordinator: HomeViewControllerDelegate {
     
     func startNavigationFlow1() {
         let child = Coordinator1(navigationController: navigationController)
@@ -45,16 +57,7 @@ class MainCoordinator: NSObject, Coordinator {
         child.parentCoordinator = self
         child.start()
     }
-    
-    func childDidFinish(_ child: Coordinator?) {
-        for (index, coordinator) in childCoordinators.enumerated() {
-            if coordinator === child {
-                childCoordinators.remove(at: index)
-                break
-            }
-        }
-    }
-    
+
 }
 
 extension MainCoordinator: UINavigationControllerDelegate {
@@ -66,13 +69,13 @@ extension MainCoordinator: UINavigationControllerDelegate {
 
         if navigationController.viewControllers.contains(fromViewController) { return }
  
-        if let viewController1A = fromViewController as? ViewController1A {
-            childDidFinish(viewController1A.coordinator)
-        }
+//        if let viewController1A = fromViewController as? ViewController1A {
+//            childDidFinish(viewController1A.coordinator as? Coordinator)
+//        }
         
-        if let viewController2A = fromViewController as? ViewController2A {
-            childDidFinish(viewController2A.coordinator)
-        }
+//        if let viewController2A = fromViewController as? ViewController2A {
+//            childDidFinish(viewController2A.coordinator)
+//        }
         
     }
     

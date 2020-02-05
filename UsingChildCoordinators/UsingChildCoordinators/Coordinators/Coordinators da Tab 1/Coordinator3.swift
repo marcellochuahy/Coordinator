@@ -20,8 +20,7 @@ class Coordinator3: Coordinator {
     }
     
     func start() {
-        let viewController = ViewController3A.instantiate()
-        viewController.coordinator = self
+       let viewController = ReusableViewController.instantiate(title: "Pagamentos Excluídos", labelText: "Por simplicidade, não foi criado um fluxo de navegação a partir dessa scene. Para verificar um exemplo com fluxo de navegação volte e escolha a opção \"Pagamentos A Vencer\"")
         navigationController.pushViewController(viewController, animated: true)
     }
     
