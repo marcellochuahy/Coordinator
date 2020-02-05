@@ -8,10 +8,10 @@
 
 import UIKit
 public protocol Coordinator: class {
-    
+
     // All coordinators must be initialized with a navigation controller
-    init(navigationController:UINavigationController)
-    
-    func start()
-    
+    init(navigationController: UINavigationController)
+
+    func makeRootViewController()
+
 }

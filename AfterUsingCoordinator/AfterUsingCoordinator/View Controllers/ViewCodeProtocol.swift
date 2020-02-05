@@ -6,4 +6,23 @@
 //  Copyright © 2020 Applause Codes. All rights reserved.
 //
 
-import Foundation
+protocol ViewCodeProtocol: class {
+    
+    func buildViewHierarchy()
+    func setupConstraints()
+    func setupComplementaryConfiguration()
+    
+    func callsMethodsInPreSetOrder()
+    
+}
+
+extension ViewCodeProtocol {
+    
+    func callsMethodsInPreSetOrder() {
+        buildViewHierarchy()
+        setupConstraints()
+        setupComplementaryConfiguration()
+    }
+    
+}
+

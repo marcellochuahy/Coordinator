@@ -1,15 +1,20 @@
 //
-//  AppDelegateCoordinator.swift
-//  AfterUsingCoordinator
+//  Coordinator001.swift
+//  UsingChildCoordinators
 //
-//  Created by Marcello Chuahy on 02/02/20.
+//  Created by Marcello Chuahy on 04/02/20.
 //  Copyright © 2020 Applause Codes. All rights reserved.
 //
 
 import UIKit
 
 public class Coordinator001: Coordinator {
-
+    
+    
+    var childCoordinators = [Coordinator]()
+    
+    // ---
+    
     unowned let navigationController: UINavigationController
     
     required public init(navigationController: UINavigationController) {
@@ -17,23 +22,20 @@ public class Coordinator001: Coordinator {
     }
     
     // MARK: - Instance Properties - ViewControllers
-
     private lazy var vc1 = VC1.instantiate(delegate: self)
-    
     private lazy var vc2s = [
         VC2.instantiate(delegate: self, title: "VC2 A", labelText: "🟠🔵🔵🔵", buttonText: "▶️ pushViewController VC2-B"),
         VC2.instantiate(delegate: self, title: "VC2 B", labelText: "🔵🟠🔵🔵", buttonText: "▶️ pushViewController VC2-C"),
         VC2.instantiate(delegate: self, title: "VC2 C", labelText: "🔵🔵🟠🔵", buttonText: "▶️ pushViewController VC2-D"),
         VC2.instantiate(delegate: self, title: "VC2 D", labelText: "🔵🔵🔵🟠", buttonText: "▶️ pushViewController VC3")
     ]
-    
     private lazy var vc3 = VC3.instantiate(delegate: self)
-
+    
     // MARK: - Methods
     public func makeRootViewController() {
         self.navigationController.viewControllers = [vc1]
     }
-
+    
 }
 
 // MARK: - VC1Delegate
@@ -59,7 +61,7 @@ extension Coordinator001: VC2NavigationDelegate {
         }
         
     }
-
+    
     public func navigateFromVC2ToPreviousScene(currentViewController: UIViewController) {
         navigationController.popViewController(animated: true)
     }
@@ -70,7 +72,7 @@ extension Coordinator001: VC2NavigationDelegate {
         }
         return viewControllers[index + 1]
     }
-
+    
 }
 
 extension Coordinator001: VC3NavigationDelegate {
@@ -84,3 +86,4 @@ extension Coordinator001: VC3NavigationDelegate {
     }
     
 }
+
